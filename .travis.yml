@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.8
+- 3.7
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: konradical
+  password:
+    secure: amuKgxxace5IT65qw4YQcHicDHKfoWzkO0jZddm8lJx1Xm8XjwlB/Yn8HCALu2ZG2fNl9LJImLLRwx52Yt3vXSxyVybOjCTApkSZsBxGrgc4T3+rEU/cK88PDgxMjGGD4GTfaVtMQhT0dTaHs6o61l3+ljdqGcwP1Ww4kWkqeYFFRzPm4una8t1mLMTvrdX8AUD2CYyFOkEWFNy+HO3wfcvqQnBjp5oWgUvQZmAqJkzu0m+4M4iB1H2PQ2he3ow3IKMCtRABwh+n9XOicl4dVa4MvBwfRyDWO0yiDXRjPbkoaIHVHxhKErIsHwRNwxqJ8cskSVucHosoU6KeWJYOMp8bXflRV5VrugZt81UPKs3Iqfxb9PFxEMyxSYDNEXUXkT8LjRm/2TQtGDjeZ9DB0Xanyl9gnWovY9unnV9VzNrJTshJtDb3Tjw9hAR0WfOk95c6N4gDDWBzW25vWgzeD5mLGH2RZ2er0THidhK9Ukvo6wILc76PDItKbtaGNeO+4M/m6VZ6dEZlkPefd19GAR18RTBEbUX17XPzZXSaY1vRJIedz+/oYq6ASQbTnwaKoczNOUnxyQT+xLWhUrWgFs1Gsar1DbcxPDjoRUdG0pX5kPwzysHpi0UNpmyzwubyzpLthLvF7QVHUlG2dn+RCDU4RUC8z/+EVlGBHDojsv0=
+  on:
+    tags: true
+    repo: konradical/python_boilerplate
+    python: 3.8
